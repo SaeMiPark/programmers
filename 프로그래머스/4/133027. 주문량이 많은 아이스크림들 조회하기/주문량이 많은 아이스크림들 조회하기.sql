@@ -1,0 +1,11 @@
+-- 코드를 입력하세요
+WITH total AS(
+SELECT * FROM FIRST_HALF 
+UNION DISTINCT
+SELECT * FROM JULY)
+
+SELECT FLAVOR
+ FROM total
+GROUP BY flavor
+ORDER BY SUM(total_order) DESC
+LIMIT 3;
