@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.*;
 
 public class Main{
@@ -19,15 +20,16 @@ public class Main{
         return dp[n];
     }
     
-    public static void main(String[] args){
-        Main m=new Main();
-        Scanner kb= new Scanner(System.in);
-        int n=kb.nextInt();
+    public static void main(String[] args) throws IOException {
+        Main S=new Main();
+        BufferedReader kb=new BufferedReader(new InputStreamReader(System.in));
+
+        int n=Integer.parseInt(kb.readLine());
         arr=new int[n+1];
         for(int i=1; i<=n; i++){
-            arr[i]=kb.nextInt();
+            arr[i]=Integer.parseInt(kb.readLine());
         }
 
-        System.out.println(m.solution(n));
+        System.out.println(S.solution(n));
     }
 }
